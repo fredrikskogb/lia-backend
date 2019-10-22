@@ -16,7 +16,7 @@ public class ProductApi {
     @Autowired
     private ProductService productService;
 
-    @GetMapping("/product")
+    @GetMapping("/products")
     public List<Product>  getAllProducts() {
         return productService.getAllProducts();
     }

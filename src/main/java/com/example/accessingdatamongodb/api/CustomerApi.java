@@ -16,30 +16,30 @@ public class CustomerApi {
     @Autowired
     private CustomerService customerService;
 
-    @GetMapping("/customer")
+    @GetMapping("/customers")
     public List<Customer> getUsers(){
         return customerService.getAllCustomers();
     }
 
-    @GetMapping("/user-details/{id}")
+    @GetMapping("/customers/user-details/{id}")
     public Optional<Customer> getSingleUser(@PathVariable String id) {
         return customerService.getSingleCustomer(id);
     }
 
 
-    @PostMapping("/update-customer/")
+    @PostMapping("/customers/update-customer/")
     public void updateUser(@RequestBody Customer customer){
         customerService.updateCustomer(customer);
     }
 
-    @PostMapping("/set-customer/")
+    @PostMapping("/customers/set-customer/")
     public void createUser(@RequestBody Customer customer){
         customerService.createCustomer(customer);
         System.out.println(customer);
 
     }
 
-    @DeleteMapping ("/delete-customer/{id}")
+    @DeleteMapping ("/customers/delete-customer/{id}")
     public void deleteUser(@PathVariable String id){
         customerService.deleteCustomer(id);
     }
