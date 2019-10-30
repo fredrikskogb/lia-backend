@@ -15,7 +15,7 @@ public class OrderApi {
     @Autowired
     private OrderService orderService;
 
-    @GetMapping("/user-order/{id}")
+    @GetMapping("/customers/customer-orders/{id}")
     public List<Order> getOrdersById(@PathVariable String id) {
         return orderService.getOrdersByCustomerId(id);
     }

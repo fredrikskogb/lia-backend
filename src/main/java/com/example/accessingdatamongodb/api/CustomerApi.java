@@ -21,7 +21,7 @@ public class CustomerApi {
         return customerService.getAllCustomers();
     }
 
-    @GetMapping("/customers/user-details/{id}")
+    @GetMapping("/customers/customer-details/{id}")
     public Optional<Customer> getSingleUser(@PathVariable String id) {
         return customerService.getSingleCustomer(id);
     }
@@ -33,10 +33,10 @@ public class CustomerApi {
     }
 
     @PostMapping("/customers/set-customer/")
-    public void createUser(@RequestBody Customer customer){
+    public Customer createUser(@RequestBody Customer customer){
         customerService.createCustomer(customer);
         System.out.println(customer);
-
+        return customer;
     }
 
     @DeleteMapping ("/customers/delete-customer/{id}")
