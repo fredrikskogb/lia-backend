@@ -4,6 +4,7 @@ import com.example.accessingdatamongodb.model.Customer;
 import com.example.accessingdatamongodb.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -48,6 +49,10 @@ public class CustomerService {
 
     public void createCustomer(Customer customer){
         customer.setCustomerCreated(customerCreated);
+
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
+        String encodedPassword = encoder.encode(customer.getPassword());
+        customer.setPassword(encodedPassword);
         repository.save(customer);
 
     }

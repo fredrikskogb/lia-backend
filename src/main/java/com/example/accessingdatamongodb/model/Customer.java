@@ -16,15 +16,18 @@ public class Customer {
     private String birthDate;
     private String email;
     private LocalDate customerCreated;
+    private String password;
 
     private Customer() {}
 
-    public Customer(String firstName, String lastName, String birthDate, String email, LocalDate customerCreated) {
+    public Customer(String firstName, String lastName, String birthDate, String email, LocalDate customerCreated,
+    String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthDate = birthDate;
         this.email = email;
         this.customerCreated = customerCreated;
+        this.password = password;
     }
 
     public String getId() {
@@ -67,19 +70,25 @@ public class Customer {
         this.email = email;
     }
 
-    public LocalDate getCustomerCreated() {
-        return customerCreated;
-    }
+    public LocalDate getCustomerCreated() { return customerCreated; }
 
     public void setCustomerCreated(LocalDate customerCreated) {
         this.customerCreated = customerCreated;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String email) {
+        this.password = password;
+    }
+
     @Override
     public String toString() {
         return String.format(
-                "Customer[id=%s, firstName='%s', lastName='%s', birthDate='%s', email='%s', customerCreated='%s']",
-                id, firstName, lastName, birthDate, email, customerCreated);
+                "Customer[id=%s, firstName='%s', lastName='%s', birthDate='%s', email='%s', customerCreated='%s', password='%s']",
+                id, firstName, lastName, birthDate, email, customerCreated, password);
     }
 
 }
