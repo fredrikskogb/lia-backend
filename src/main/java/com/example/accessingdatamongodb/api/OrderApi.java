@@ -20,4 +20,9 @@ public class OrderApi {
         return orderService.getOrdersByCustomerId(id);
     }
 
+    @GetMapping("/orders")
+    public List<Order> getAllOrders() {
+        return orderService.getAllOrders();
+    }
+
 }

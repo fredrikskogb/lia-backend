@@ -1,6 +1,7 @@
 package com.example.accessingdatamongodb.services;
 
 import com.example.accessingdatamongodb.model.Order;
+import com.example.accessingdatamongodb.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -13,6 +14,8 @@ import java.util.List;
 
 public class OrderService {
 
+    @Autowired
+    private OrderRepository orderRepository;
     private MongoTemplate mongoTemplate;
 
     @Autowired
@@ -28,6 +31,9 @@ public class OrderService {
         return mongoTemplate.find(query, Order.class);
     }
 
+    public List<Order> getAllOrders() {
+        return orderRepository.findAll();
+    }
 
 
 }
