@@ -20,9 +20,15 @@ public class OrderApi {
         return orderService.getOrdersByCustomerId(id);
     }
 
+
     @GetMapping("/orders")
     public List<Order> getAllOrders() {
         return orderService.getAllOrders();
+    }
+
+    @GetMapping("/orders/{id}")
+    public Order getSingleOrderById(@PathVariable String id) {
+        return orderService.getOrderByOrderId(id);
     }
 
 }

@@ -42,13 +42,13 @@ public class AccessingMongodbApplication implements CommandLineRunner {
 		/*repository.save(new Customer("Alice","Smith","1990-02-27","alice@smith.com", customerCreated));
 		repository.save(new Customer("Bob","James","1983-04-14","bob@james.com", customerCreated));
 */
-		orderRepository.deleteAll();
+		/*orderRepository.deleteAll();
 		if(orderRepository.findById("5d9b36a721052e1250b3acc1").isPresent()) {
 			System.out.println(orderRepository.findAll());
 			orderRepository.save(new Order("5d9b36a721052e1250b3acc1", "5db6bf3206e082048b393b3b", "0"));
 		} else {
 			orderRepository.save(new Order("5d9b36a721052e1250b3acc1", "5db6bf3206e082048b393b3b", "0"));
-		}
+		}*/
 
 		System.out.println(repository.findAll());
 

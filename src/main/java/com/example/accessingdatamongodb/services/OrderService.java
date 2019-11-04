@@ -35,5 +35,14 @@ public class OrderService {
         return orderRepository.findAll();
     }
 
+    public Order getOrderByOrderId(String orderId) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("id").is(orderId));
+
+        Order order = mongoTemplate.findOne(query, Order.class);
+        return order;
+
+    }
+
 
 }
