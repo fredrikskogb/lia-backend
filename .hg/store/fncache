@@ -29,3 +29,4 @@ data/src/main/java/com/example/accessingdatamongodb/api/ProductApi.java.i
 data/src/main/java/com/example/accessingdatamongodb/repository/OrderRepository.java.i
 data/src/main/java/com/example/accessingdatamongodb/model/Customer.java.i
 data/src/main/java/com/example/accessingdatamongodb/model/Credits.java.i
+data/.gitignore.i

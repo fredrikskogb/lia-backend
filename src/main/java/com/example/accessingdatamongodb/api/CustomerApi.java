@@ -44,9 +44,6 @@ public class CustomerApi {
         customerService.deleteCustomer(id);
     }
 
-    @GetMapping("/customers/login/{email}/{password}")
-    public void login(@PathVariable String email, @PathVariable  String password) {
-        customerService.loginUser(email, password);
-    }
+
 
 }

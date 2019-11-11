@@ -11,16 +11,18 @@ public class Product {
     private String fullPrice;
     private String discount;
     private String imageUrl;
+    private String description;
 
     public Product() {
 
     }
 
-    public Product(String service, String fullPrice, String discount, String imageUrl){
+    public Product(String service, String fullPrice, String discount, String imageUrl, String description){
         this.service = service;
         this.fullPrice = fullPrice;
         this.discount = discount;
         this.imageUrl = imageUrl;
+        this.description = description;
     }
 
     public String getId() {
@@ -58,5 +60,9 @@ public class Product {
     public String getImageUrl() { return imageUrl; }
 
     public void setImageUrl(String discount) { this.imageUrl = imageUrl; }
+
+    public String getDescription() { return description; }
+
+    public void setDescription(String description) { this.description = description; }
 
 }

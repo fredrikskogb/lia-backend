@@ -1,16 +1,12 @@
 package com.example.accessingdatamongodb.services;
 
 import com.example.accessingdatamongodb.model.Customer;
-import com.example.accessingdatamongodb.model.Order;
 import com.example.accessingdatamongodb.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
@@ -75,21 +71,6 @@ public class CustomerService {
         }
     }
 
-    public boolean loginUser(String email, String password) {
-
-        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        // load db pass
-        Customer customer = repository.findByEmail(email);
-        String dbPassword = customer.getPassword();
-        String dbEmail = customer.getEmail();
-
-        if (passwordEncoder.matches(password, dbPassword) && email == dbEmail) {
-            return true;
-        } else {
-            return false;
-        }
-
-    }
 
 }
 
