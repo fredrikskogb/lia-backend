@@ -26,7 +26,6 @@ public class CustomerApi {
         return customerService.getSingleCustomer(id);
     }
 
-
     @PostMapping("/customers/update-customer/")
     public void updateUser(@RequestBody Customer customer){
         customerService.updateCustomer(customer);
